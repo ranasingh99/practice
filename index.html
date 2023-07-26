@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <!-- <form action="#" onsubmit="saveToLocalStorage(event)">
+    <form action="#" onsubmit="saveToLocalStorage(event)">
         <h1>Book a call</h1>
         <h3>Book a call slot and our reprentative will call you within 1 hr of selected time</h3>
         <hr>
@@ -27,26 +27,9 @@
             <h1>GET A CALL</h1>
         </div>
 
-    </form> -->
-    <form action="#" onsubmit="showUserOnScreen(event)">
-        <label for="name">Username</label>
-        <input type="text" name="username"><br>
-        <label for="email">Email</label>
-        <input type="email" name="useremail">
-        <input type="submit">
     </form>
     <ul id="listOfItems"></ul>
-    <!-- <script>
-        function showUserOnScreen(event) {
-            event.preventDefault();
-            let name = event.target.username.value;
-            let email = event.target.useremail.value;
-            let parentElement = document.getElementById('listOfItems');
-            let childElement = document.createElement('li');
-            childElement.textContent = name + " " + email;
-            parentElement.appendChild(childElement);
-        }
-    </script> -->
+
     <script src="main.js"></script>
 </body>
 

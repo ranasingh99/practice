@@ -27,3 +27,10 @@ h1 {
    font-size: 30px;
    border-radius: 8px;
 }
+.btn2{
+   background-color: red;
+   font-size: 15px;
+   border-radius: 5px;
+   margin-left: 15px;
+   width: max-content;
+}
