@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- <form action="#" onsubmit="saveToLocalStorage(event)">
+        <h1>Book a call</h1>
+        <h3>Book a call slot and our reprentative will call you within 1 hr of selected time</h3>
+        <hr>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="username" required /><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="useremail" required /><br>
+        <label for="contactNo">Phone No:</label><br>
+        <input type="number" id="contactNo" name="usercontact" /><br>
+        <label for="timeofcall">Time for call:</label><br>
+        <input type="datetime-local" id="timeofcall" name="datetime" /><br>
+        <input type="submit" class="btn1" />
+        <div>
+            <h1>GET A CALL</h1>
+        </div>
+
+    </form> -->
+    <form action="#" onsubmit="showUserOnScreen(event)">
+        <label for="name">Username</label>
+        <input type="text" name="username"><br>
+        <label for="email">Email</label>
+        <input type="email" name="useremail">
+        <input type="submit">
+    </form>
+    <ul id="listOfItems"></ul>
+    <!-- <script>
+        function showUserOnScreen(event) {
+            event.preventDefault();
+            let name = event.target.username.value;
+            let email = event.target.useremail.value;
+            let parentElement = document.getElementById('listOfItems');
+            let childElement = document.createElement('li');
+            childElement.textContent = name + " " + email;
+            parentElement.appendChild(childElement);
+        }
+    </script> -->
+    <script src="main.js"></script>
+</body>
+
+</html>
