@@ -5,13 +5,14 @@ function saveToLocalStorage(e){
   const phonenumber = e.target.usercontact.value;
   const calltime = e.target.datetime.value;
   const myObj={
-    username:name,
-    emailId:emailId,
-    phonenumber:phonenumber,
-    calltime:calltime
+    username,
+    emailId,
+    phonenumber,
+    calltime
   }
+  axios.post('https://crudcrud.com/api/9346a909c2374d7b93649fa58002c0ed/appointmentdata',obj)
   let myObj_serialised = JSON.stringify(myObj);
-  localStorage.setItem(myObj.emailId,myObj_serialised);
+  //localStorage.setItem(myObj.emailId,myObj_serialised);
   showUsersOnScreen(myObj);
 
 }
@@ -29,6 +30,21 @@ function showUsersOnScreen(obj){
   localStorage.removeItem(obj.emailId);
   parentElement.removeChild(childElement);
  }
+
+ // add edit button 
+ let editButton = document.createElement('input');
+ editButton.type = 'button';
+ editButton.value = 'Edit';
+ editButton.className = 'btn3';
+ editButton.onclick = ()=>{
+    localStorage.removeItem(obj.emailId);
+    parentElement.removeChild(childElement);
+    document.getElementById('name').value = obj.username;
+    document.getElementById('email').value = obj.emailId;
+    document.getElementById('contactNo').value = obj.phonenumber;
+    document.getElementById('timeofcall').value = obj.calltime;
+ }
  childElement.appendChild(deleteButton);
+ childElement.appendChild(editButton);
   parentElement.appendChild(childElement);
 }
