@@ -15,13 +15,27 @@ function saveToLocalStorage(e){
     showUsersOnScreen(res.data)
   })
   .catch((error)=>{
+    document.body.innerHTML = document.body.innerHTML + "<h4>somtheing went wrong</h4>";
     console.log(error)
   })
-  let myObj_serialised = JSON.stringify(myObj);
+  //let myObj_serialised = JSON.stringify(myObj);
   //localStorage.setItem(myObj.emailId,myObj_serialised);
   //showUsersOnScreen(myObj);
 
 }
+window.addEventListener('DOMContentLoaded',()=>{
+  axios.get('https://crudcrud.com/api/ce7940cb620a49ef8603db37ae5c17d3/appointmentData')
+.then((res)=>{
+  console.log(res)
+  for(var i =0;i<res.data.length;i++){
+    showUsersOnScreen(res.data[i]);
+  }
+})
+.catch((error)=>{
+  console.group(error)
+})
+
+})
 
 function showUsersOnScreen(obj){
   let parentElement= document.getElementById('listOfItems');
@@ -45,10 +59,10 @@ function showUsersOnScreen(obj){
  editButton.onclick = ()=>{
    // localStorage.removeItem(obj.emailId);
     parentElement.removeChild(childElement);
-    document.getElementById('name').value = obj.username;
-    document.getElementById('email').value = obj.emailId;
-    document.getElementById('contactNo').value = obj.phonenumber;
-    document.getElementById('timeofcall').value = obj.calltime;
+    document.getElementById('name').value = ''
+    document.getElementById('email').value = ''
+    document.getElementById('contactNo').value = ''
+    document.getElementById('timeofcall').value = ''
  }
  childElement.appendChild(deleteButton);
  childElement.appendChild(editButton);
