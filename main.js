@@ -65,10 +65,13 @@ function showUsersOnScreen(obj){
  editButton.onclick = ()=>{
    // localStorage.removeItem(obj.emailId);
     parentElement.removeChild(childElement);
-    document.getElementById('name').value = ''
-    document.getElementById('email').value = ''
-    document.getElementById('contactNo').value = ''
-    document.getElementById('timeofcall').value = ''
+    axios.put(`https://crudcrud.com/api/3828400ad2cc4ddea02db8fe045d2dc7/appointmentData/${obj._id}`)
+    .then((res)=>{
+      console.log(res.data)
+    })
+    .catch((error)=>{
+      console.log(error)
+    })
  }
  childElement.appendChild(deleteButton);
  childElement.appendChild(editButton);
