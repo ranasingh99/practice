@@ -10,7 +10,7 @@ function saveToLocalStorage(e){
     phonenumber,
     calltime
   }
-  axios.post('https://crudcrud.com/api/ce7940cb620a49ef8603db37ae5c17d3/appointmentData',myObj)
+  axios.post('https://crudcrud.com/api/3828400ad2cc4ddea02db8fe045d2dc7/appointmentData',myObj)
   .then((res)=>{
     showUsersOnScreen(res.data)
   })
@@ -18,13 +18,11 @@ function saveToLocalStorage(e){
     document.body.innerHTML = document.body.innerHTML + "<h4>somtheing went wrong</h4>";
     console.log(error)
   })
-  //let myObj_serialised = JSON.stringify(myObj);
-  //localStorage.setItem(myObj.emailId,myObj_serialised);
-  //showUsersOnScreen(myObj);
+ 
 
 }
 window.addEventListener('DOMContentLoaded',()=>{
-  axios.get('https://crudcrud.com/api/ce7940cb620a49ef8603db37ae5c17d3/appointmentData')
+  axios.get('https://crudcrud.com/api/3828400ad2cc4ddea02db8fe045d2dc7/appointmentData')
 .then((res)=>{
   console.log(res)
   for(var i =0;i<res.data.length;i++){
@@ -49,6 +47,14 @@ function showUsersOnScreen(obj){
  deleteButton.onclick = ()=>{
   //localStorage.removeItem(obj.emailId);
   parentElement.removeChild(childElement);
+  axios.delete(`https://crudcrud.com/api/3828400ad2cc4ddea02db8fe045d2dc7/appointmentData/${obj._id}`)
+  .then((res)=>{
+    console.log(res);
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
+
  }
 
  // add edit button 
